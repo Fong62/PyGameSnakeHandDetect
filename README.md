@@ -4,11 +4,12 @@
 Chào mừng bạn đến với Snake Game! Đây là trò chơi nho nhỏ được xây dựng để giúp người chơi thư giãn, giải trí nhằm giảm căng thẳng.
 
 ## Tính Năng Chính
-- Chọn màn chơi: Ở menu chính cho phép người chơi có thể lựa chọn màn chơi từ level 1 - 20.
-- Di chuyển: Sử dụng tay xung quanh để di chuyển chú rắn săn mồi. Chú rắn di chuyển theo hướng bàn tay người chơi di chuyển.
+- **Chọn màn chơi**: Ở menu chính cho phép người chơi có thể lựa chọn màn chơi từ level 1 - 20.
+- **Di chuyển**: Sử dụng tay xung quanh để di chuyển chú rắn săn mồi. Chú rắn di chuyển theo hướng bàn tay người chơi di chuyển.
 
 ## Công nghệ sử dụng
-- Trình biên dịch: Python.
+- **Trình biên dịch**: VSCode.
+- **Ngôn ngữ**: Python.
 - Thư viện hỗ trợ: Pygame, random, numpy, opencv-python, mediapipe.
 
 ## Yêu cầu hệ thống
