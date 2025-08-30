@@ -4,20 +4,15 @@ from directkeys import PressKey, ReleaseKey, up_arrow_pressed, down_arrow_presse
 import threading
 import time
 
-# Initialize MediaPipe Hands
 mp_hands = mp.solutions.hands
 hands = mp_hands.Hands(min_detection_confidence=0.7, min_tracking_confidence=0.5)
 
-# Set to keep track of currently pressed keys
 current_key_pressed = set()
 
-# Give some time to set up the camera
 time.sleep(2.0)
 
-# Start video capture
 video = cv2.VideoCapture(0)
 
-# Define movement thresholds
 move_threshold = 100  # Ngưỡng di chuyển
 upper_threshold = 150  # Tăng ngưỡng nhảy
 lower_threshold = 325 # Giữ nguyên ngưỡng cúi
@@ -26,10 +21,10 @@ width, height = 640, 480
 video.set(3, width)
 video.set(4, height)
 
-hand_movement = 'neutral'  # Giá trị mặc định ban đầu
+hand_movement = 'neutral'
 
 def detect_hand_movement():
-    global hand_movement  # Sử dụng biến toàn cục
+    global hand_movement
     while True:
         ret, frame = video.read()
     
@@ -71,12 +66,11 @@ def detect_hand_movement():
         if cv2.waitKey(1) & 0xFF == ord('q'):  # Đóng cửa sổ OpenCV khi nhấn 'q'
             break
 
-# Khởi động thread cho nhận diện cử động tay
 hand_detection_thread = threading.Thread(target=detect_hand_movement)
-hand_detection_thread.daemon = True  # Đảm bảo thread sẽ kết thúc khi chương trình chính kết thúc
+hand_detection_thread.daemon = True
 hand_detection_thread.start()
 
 # Trả về cử động tay hiện tại
 def get_hand_movement():
-    global hand_movement  # Đảm bảo lấy giá trị cập nhật từ thread
+    global hand_movement
     return hand_movement
